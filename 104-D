@@ -1,0 +1,69 @@
+const targetNode = document.querySelector("body");
+
+const config = { attributes: true, childList: true, subtree: true };
+
+const callback = function(mutationsList, observer) {
+    for(const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            if(document.querySelector(".styles_ownerDetail__2bEhx").querySelector("button").innerText =='Telefona Bak' ||  /\d/.test(document
+          .querySelector(".styles_ownerDetail__2bEhx")
+          .querySelector("button").innerText)){
+   
+
+  
+  if(!!document.querySelector(".styles_ownerContent__2ai7J").querySelector(".styles_button__GH_hv")){
+    var mainInfo = document.querySelector(".styles_ownerContent__2ai7J");
+    var lookPhone = mainInfo.querySelector(".styles_button__GH_hv");
+    var sendSms = mainInfo.querySelector(".styles_button__2aQNE");
+    sendSms.insertAdjacentElement("afterend", lookPhone);
+
+  }else {
+   const mainInfo = document.querySelector(".styles_ownerContent__2ai7J");
+    const buttons =  mainInfo.querySelectorAll(".styles_button__2aQNE");
+    buttons[1].insertAdjacentElement("afterend", buttons[0]);
+    buttons[1].querySelector("button").classList.remove("styles_primary__1I59D");
+    buttons[1].querySelector("button").classList.add("styles_fourth__1CoaL");
+    buttons[0].querySelector("button").classList.add("styles_primary__1I59D");
+    buttons[0].querySelector("button").classList.remove("styles_fourth__1CoaL");
+  }
+
+  
+  }
+        }
+        else if (mutation.type === 'attributes') {
+            if(document.querySelector(".styles_ownerDetail__2bEhx").querySelector("button").innerText =='Telefona Bak' ||  /\d/.test(document
+          .querySelector(".styles_ownerDetail__2bEhx")
+          .querySelector("button").innerText)){
+    
+
+ 
+  if(!!document.querySelector(".styles_ownerContent__2ai7J").querySelector(".styles_button__GH_hv")){
+    var mainInfo = document.querySelector(".styles_ownerContent__2ai7J");
+    var lookPhone = mainInfo.querySelector(".styles_button__GH_hv");
+    var sendSms = mainInfo.querySelector(".styles_button__2aQNE");
+    sendSms.insertAdjacentElement("afterend", lookPhone);
+
+  }else {
+      const mainInfo = document.querySelector(".styles_ownerContent__2ai7J");
+    const buttons =  mainInfo.querySelectorAll(".styles_button__2aQNE");
+    buttons[1].insertAdjacentElement("afterend", buttons[0]);
+    buttons[1].querySelector("button").classList.remove("styles_primary__1I59D");
+    buttons[1].querySelector("button").classList.add("styles_fourth__1CoaL");
+    buttons[0].querySelector("button").classList.add("styles_primary__1I59D");
+    buttons[0].querySelector("button").classList.remove("styles_fourth__1CoaL");
+  }
+
+ 
+  }
+        }
+    }
+};
+
+
+const observer = new MutationObserver(callback);
+
+
+observer.observe(targetNode, config);
+
+
+
