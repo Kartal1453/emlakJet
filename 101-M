@@ -1,0 +1,53 @@
+///// Variant 1 
+
+function ab() {
+
+document.querySelector(".styles_showOnMap__2NEQd > img").insertAdjacentHTML('afterend',
+    '<span class="newTest101"style="text-decoration: underline;width: 82px;height: 18px;margin: 0 0 0px 27px;font-family: OpenSans;font-size: 13px;font-weight: bold;font-stretch: normal;font-style: normal;line-height: normal;letter-spacing: normal;text-align: right;color: #58b847;" >Konumu Gör</span>');
+document.querySelector(".styles_showOnMap__2NEQd > img").remove();
+document.querySelector(".styles_showOnMap__2NEQd > p").insertAdjacentHTML('beforebegin', '<div class ="testWrapperDiv" style="margin-top: 2px;" ><svg width="18" height="18" viewBox="0 0 24 24" class="styles_targetIcon__1h_IA styles_black__33lug"><path fill="none" d="M0 0h24v24H0V0z"></path><path fill="#58b847" d="M12 2C8.13 2 5 5.13 5 9c0 4.17 4.42 9.92 6.24 12.11.4.48 1.13.48 1.53 0C14.58 18.92 19 13.17 19 9c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></path></svg></div>');
+document.querySelector(".styles_showOnMap__2NEQd > p").style.display = "inline";
+document.querySelector(".styles_showOnMap__2NEQd > p").style.marginRight = "auto";
+document.querySelector(".styles_showOnMap__2NEQd > p").style.paddingTop = "7px";
+document.querySelector(".styles_showOnMap__2NEQd > p").innerHTML = document.querySelector(".styles_showOnMap__2NEQd > p").innerHTML.replace("Mah.","Mahallesi")
+document.querySelector(".styles_showOnMap__2NEQd > p").innerHTML = `${document.querySelector(".styles_showOnMap__2NEQd > p").innerHTML.split("-")[1]} - ${document.querySelector(".styles_showOnMap__2NEQd > p").innerHTML.split("-")[0]}`
+};
+ab()
+ var dom_observer = new MutationObserver(function (mutation) {
+   
+   if(!document.querySelector(".newTest101")){
+     ab();}
+  });
+  var container = document.body;
+  var configs = { attributes: false, childList: true, characterData: false };
+  dom_observer.observe(container, configs);
+  
+  
+  ///// Variant 2 
+  
+function haritaChange() {
+
+document.querySelector(".styles_showOnMap__2NEQd > img").insertAdjacentHTML('afterend', '<img class="round-keyboard_arrow_right-24px-1-copy-4" style="width: 7px;height: 12px;margin-right: 1.7px;margin-left: auto;object-fit: contain;" src="https://i.ibb.co/PQzcnjz/round-keyboard-arrow-right-24-px-1-copy-4.png" >');
+document.querySelector(".styles_showOnMap__2NEQd > p").insertAdjacentHTML('afterend', '<img class="newTest101" style="margin: 9px 9px 9px 0px;width: 70px;height: 30px;" src="https://i.ibb.co/7RsLSPW/group-5.png" >');
+document.querySelectorAll(".styles_showOnMap__2NEQd > img")[1].remove();
+document.querySelector(".styles_showOnMap__2NEQd").style.justifyContent = "start";
+document.querySelector(".styles_showOnMap__2NEQd > p").style.marginTop = "12px";
+document.querySelector(".styles_showOnMap__2NEQd > p").style.marginLeft = "3px";
+document.querySelector(".styles_showOnMap__2NEQd > img").parentNode.insertBefore(document.querySelector(".styles_showOnMap__2NEQd > img"), document.querySelector(".styles_showOnMap__2NEQd > p"));
+
+
+
+}
+
+
+haritaChange()
+ var dom_observer = new MutationObserver(function (mutation) {
+   
+   if(!document.querySelector(".newTest101")){
+     haritaChange();}
+  });
+  var container = document.body;
+  var configs = { attributes: false, childList: true, characterData: false };
+  dom_observer.observe(container, configs);
+  
+  
