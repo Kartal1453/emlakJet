@@ -1,0 +1,122 @@
+//////// Variant 1 
+
+function filter() {
+  if(!document.querySelector(".stop-func")){
+  
+         document.querySelector(".styles_filterButton__16dT5").style.cssText = "background-color:#52ca46 !important";
+    document.querySelector(".styles_filterButton__16dT5").querySelector("strong").style.cssText ="color:white !important";
+    document.querySelector(".styles_filterButton__16dT5").querySelector("svg").style.cssText ="fill:white !important";
+    document.querySelector(".styles_filterButton__16dT5").querySelector("svg").querySelectorAll("path")[1].style.cssText ="fill:white !important";
+     document.querySelector(".styles_filterButton__16dT5").classList.add("stop-func");
+  }
+}
+
+
+
+
+filter();
+ var dom_observer = new MutationObserver(function (mutation) {
+          filter()
+         })
+         var container = document.body
+         var configs = {attributes: false, childList: true, characterData: false}
+         dom_observer.observe(container, configs)
+         
+//////// Variant 2
+
+
+
+function filter() {
+  if(!document.querySelector(".styles_wrapper__1frpl").querySelector("span")){
+  var filter = document.querySelector(".styles_filterButton__16dT5");
+var filterToolBar=document.querySelector(".styles_filterToolbar__33Prx");
+var spanFilter = filter.querySelector("span");
+var titleContainer = document.querySelector(".styles_wrapper__1frpl");
+titleContainer.insertAdjacentElement('beforeend',spanFilter);
+titleContainer.style.cssText = "display: flex !important;";
+document.querySelector(".styles_title__2zOc7").style.cssText = "width: auto !important;";
+var spanFilterText = spanFilter.innerText;
+var spanFilterTextNumbers = spanFilterText.replace( /[^\d\.]*/g, '');
+spanFilter.innerText = `(${spanFilterTextNumbers} sonuç bulundu)`;
+spanFilter .style.cssText = "color: #a1a1a1; font-size: 12px; display: flex; align-items: center; margin-left: 8px;min-width: 132px;";
+filter.querySelector("div").remove();
+var sortFilter = document.querySelector(".styles_sortInner__4j6QU");
+sortFilter.querySelector("div").remove();
+filterToolBar.style.cssText = "padding: 10px 15px;background-color: #fff; box-shadow: none !important;display: flex;align-items: center;"
+filter.style.cssText = "width: 140px !important;height: 34px;margin-left: 5px;border-radius: 10px;border: solid 1px #d8d8d8;background-color: #fff;";
+document.querySelector(".styles_sortSelect__2ecEm").style.cssText = "width: 140px !important;border: solid 1px #d8d8d8;border-radius: 10px;height: 34px;margin-right: 5px;";
+document.querySelector(".styles_sort__4cYjW").style.cssText = "height: 34px;";
+filter.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" style="fill:#58B847 !important;margin-left: 5px;" width="14" height="16">
+    <g fill="#58B847" fill-rule="nonzero">
+        <path style="fill:#58B847 !important;" d="M3.854 4.707a1.957 1.957 0 0 0 1.881-1.424h7.732a.533.533 0 1 0 0-1.066H5.735a1.953 1.953 0 0 0-3.761 0H.832a.533.533 0 0 0 0 1.066h1.142a1.957 1.957 0 0 0 1.88 1.424zM2.96 2.75a.89.89 0 1 1 1.781 0 .89.89 0 0 1-1.781 0zM3.854 14.673a1.957 1.957 0 0 0 1.881-1.423h7.732a.533.533 0 0 0 0-1.066H5.735a1.953 1.953 0 0 0-3.761 0H.832a.533.533 0 1 0 0 1.066h1.142a1.957 1.957 0 0 0 1.88 1.423zm-.894-1.956a.89.89 0 1 1 1.781 0 .89.89 0 0 1-1.781 0zM10.44 5.777A1.957 1.957 0 0 0 8.56 7.2H.828a.533.533 0 0 0 0 1.066H8.56a1.953 1.953 0 0 0 3.761 0h1.142a.533.533 0 1 0 0-1.066h-1.142a1.957 1.957 0 0 0-1.88-1.423zm.895 1.956a.89.89 0 1 1-1.782 0 .89.89 0 0 1 1.782 0z"/>
+    </g>
+</svg>`);
+sortFilter.insertAdjacentHTML("beforeend",`<svg xmlns="http://www.w3.org/2000/svg" style="fill:#58B847 !important;margin-left: 5px;" width="15" height="16">
+    <path style="fill:#58B847 !important;" d="m13.852 4.595-3.5-3.45a.512.512 0 0 0-.713 0l-3.5 3.45a.496.496 0 0 0 0 .707.508.508 0 0 0 .715 0l2.637-2.6V8.5c0 .276.226.5.505.5a.503.503 0 0 0 .505-.5V2.702l2.637 2.6a.508.508 0 0 0 .714 0 .496.496 0 0 0 0-.707zm-5.705 6.102-2.637 2.6V7.5c0-.276-.226-.5-.505-.5a.503.503 0 0 0-.505.5v5.797l-2.637-2.6a.508.508 0 0 0-.714 0 .496.496 0 0 0 0 .707l3.5 3.45c.194.192.52.194.714 0l3.499-3.45a.496.496 0 0 0 0-.707.51.51 0 0 0-.715 0z" fill="#58B847" fill-rule="nonzero" stroke="#58B847" stroke-width=".1"/>
+</svg>`);
+
+filter.querySelector("strong").innerText = 'Filtrele';
+sortFilter.querySelector("strong").innerText = 'Sırala';
+document.querySelector(".styles_sortDropdown__2mmTr").querySelector("select").style.cssText ="height:40px";
+  }
+}
+
+
+
+
+filter();
+ var dom_observer = new MutationObserver(function (mutation) {
+          filter()
+         })
+         var container = document.body
+         var configs = {attributes: false, childList: true, characterData: false}
+         dom_observer.observe(container, configs)
+         
+         
+ //////// Variant 3 
+ 
+ function filter(){
+  
+  if( !!document.querySelector(".styles_wrapper__1frpl")&&!document.querySelector(".styles_wrapper__1frpl").querySelector("span")){
+   var filter = document.querySelector(".styles_filterToolbar__33Prx").children[1];
+var filterToolBar=document.querySelector(".styles_filterToolbar__33Prx");
+var spanFilter = filter.querySelector("span");
+var titleContainer = document.querySelector(".styles_wrapper__1frpl");
+titleContainer.style.cssText = "display: flex !important;";
+document.querySelector(".styles_title__2zOc7").style.cssText = "width: auto !important;";
+var spanFilterText = spanFilter.innerText;
+var spanFilterTextNumbers = spanFilterText.replace( /[^\d\.]*/g, '');
+spanFilter.innerText = `(${spanFilterTextNumbers} sonuç bulundu)`;
+spanFilter .style.cssText = "color: #a1a1a1; font-size: 12px; display: flex; align-items: center; margin-left: 8px;min-width: 132px;";
+filter.querySelector("div").remove();
+var sortFilter = document.querySelector(".styles_filterToolbar__33Prx").children[0].children[0].children[0]
+sortFilter.querySelector("div").remove();
+filterToolBar.style.cssText = "padding: 10px 15px;background-color: #fff; box-shadow: none !important;display: flex;align-items: center;"
+filter.style.cssText = "width: 140px !important;height: 34px;margin-right: 5px;border-radius: 10px;border: solid 1px #d8d8d8;background-color: #fff;";
+document.querySelector(".styles_filterToolbar__33Prx").children[0].style.cssText = "width: 140px !important;border: solid 1px #d8d8d8;border-radius: 10px;height: 34px;margin-left: 5px;";
+document.querySelector(".styles_filterToolbar__33Prx").children[0].children[0].style.cssText = "height: 34px;";
+filter.insertAdjacentHTML("beforeend", `<svg xmlns="http://www.w3.org/2000/svg" style="fill:#58B847 !important;margin-left: 5px;" width="14" height="16">
+    <g fill="#58B847" fill-rule="nonzero">
+        <path style="fill:#58B847 !important;" d="M3.854 4.707a1.957 1.957 0 0 0 1.881-1.424h7.732a.533.533 0 1 0 0-1.066H5.735a1.953 1.953 0 0 0-3.761 0H.832a.533.533 0 0 0 0 1.066h1.142a1.957 1.957 0 0 0 1.88 1.424zM2.96 2.75a.89.89 0 1 1 1.781 0 .89.89 0 0 1-1.781 0zM3.854 14.673a1.957 1.957 0 0 0 1.881-1.423h7.732a.533.533 0 0 0 0-1.066H5.735a1.953 1.953 0 0 0-3.761 0H.832a.533.533 0 1 0 0 1.066h1.142a1.957 1.957 0 0 0 1.88 1.423zm-.894-1.956a.89.89 0 1 1 1.781 0 .89.89 0 0 1-1.781 0zM10.44 5.777A1.957 1.957 0 0 0 8.56 7.2H.828a.533.533 0 0 0 0 1.066H8.56a1.953 1.953 0 0 0 3.761 0h1.142a.533.533 0 1 0 0-1.066h-1.142a1.957 1.957 0 0 0-1.88-1.423zm.895 1.956a.89.89 0 1 1-1.782 0 .89.89 0 0 1 1.782 0z"/>
+    </g>
+</svg>`);
+sortFilter.insertAdjacentHTML("beforeend",`<svg xmlns="http://www.w3.org/2000/svg" style="fill:#58B847 !important;margin-left: 5px;" width="15" height="16">
+    <path style="fill:#58B847 !important;" d="m13.852 4.595-3.5-3.45a.512.512 0 0 0-.713 0l-3.5 3.45a.496.496 0 0 0 0 .707.508.508 0 0 0 .715 0l2.637-2.6V8.5c0 .276.226.5.505.5a.503.503 0 0 0 .505-.5V2.702l2.637 2.6a.508.508 0 0 0 .714 0 .496.496 0 0 0 0-.707zm-5.705 6.102-2.637 2.6V7.5c0-.276-.226-.5-.505-.5a.503.503 0 0 0-.505.5v5.797l-2.637-2.6a.508.508 0 0 0-.714 0 .496.496 0 0 0 0 .707l3.5 3.45c.194.192.52.194.714 0l3.499-3.45a.496.496 0 0 0 0-.707.51.51 0 0 0-.715 0z" fill="#58B847" fill-rule="nonzero" stroke="#58B847" stroke-width=".1"/>
+</svg>`);
+
+filter.querySelector("strong").innerText = 'Filtrele';
+sortFilter.querySelector("strong").innerText = 'Sırala';
+document.querySelector(".styles_sortDropdown__2mmTr").querySelector("select").style.cssText ="height:40px";
+titleContainer.insertAdjacentElement('beforeend',spanFilter);
+filterToolBar.insertAdjacentElement('afterbegin',filter);
+if(document.querySelector(".styles_filterToolbar__33Prx").children[0].classList.contains("styles_sortSelect__2ecEm")){document.querySelector(".styles_filterToolbar__33Prx").children[0].classList.add("styles_filterButton__16dT5")}
+
+  }
+}
+ filter();
+var dom_observer = new MutationObserver(function (mutation) {
+         filter()
+        })
+        var container = document.body
+        var configs = {attributes: false, childList: true, characterData: false}
+        dom_observer.observe(container, configs)
