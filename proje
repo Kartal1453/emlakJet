@@ -1,0 +1,18 @@
+window.onload = function() {
+    if(!!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'ankara') && !!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'istanbul') && !!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'izmir') && !!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'bursa') && !!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'antalya ')){ 
+        dom_observer.disconnect();
+        console.log("stop 100");
+    } 
+  };
+
+var dom_observer = new MutationObserver(function (mutation) {
+if((__NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'ankara' || __NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'istanbul' || __NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'izmir' || __NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'bursa' || __NEXT_DATA__.props.initialProps.pageProps.pageResponse.projectDetail.result[0].projects.RAWDATA.city[0].slug.toLocaleLowerCase() == 'antalya ') && !google_tag_manager['GTM-PFSRVDC'].dataLayer.get('100')){
+        dataLayer.push({'Category':'proje','Label':'proje-detay', 'event':'gaEvent'});
+        dataLayer.push({"100": "true"});
+        console.log("run 100");
+        dom_observer.disconnect();
+        }
+})
+var container = document.body
+var configs = {attributes: false, childList: true, characterData: false}
+dom_observer.observe(container, configs)
