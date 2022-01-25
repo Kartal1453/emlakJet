@@ -1,0 +1,92 @@
+window.onload = function ()
+{
+    if (!!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location))
+    {
+        if (
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('ankara')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('istanbul')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('izmir')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('bursa')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('antalya'))
+        )
+        {
+            dom_observer.disconnect();
+            console.log("STOP 101");
+        }
+    } else
+    {
+        if (
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('ankara')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('istanbul')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('izmir')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('bursa')) &&
+            !!!(String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('antalya'))
+        )
+        {
+            dom_observer.disconnect();
+            console.log("STOP 102");
+        }
+    }
+
+
+
+
+
+};
+
+var dom_observer = new MutationObserver(function (mutation)
+{
+    if (!!!(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location)) {
+        if (
+            (   String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('ankara') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('istanbul') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('izmir') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('bursa') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.result.location.city.slug.toLocaleLowerCase()) == String('antalya')) &&
+            !google_tag_manager["GTM-PFSRVDC"].dataLayer.get("101")
+        )
+        {
+            dataLayer.push({
+                Category: "ilan",
+                Label: "ilan-detay",
+                event: "gaEvent",
+            });
+            dataLayer.push({
+                101: "true",
+            });
+            console.log("run 101");
+            dom_observer.disconnect();
+        }
+    }else{
+
+        if (
+            (String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('ankara') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('istanbul') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('izmir') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('bursa') ||
+            String(__NEXT_DATA__.props.initialProps.pageProps.pageResponse.location.city.slug.toLocaleLowerCase()) == String('antalya')) &&
+            !google_tag_manager["GTM-PFSRVDC"].dataLayer.get("101")
+        )
+        {
+            dataLayer.push({
+                Category: "ilan",
+                Label: "ilan-detay",
+                event: "gaEvent",
+            });
+            dataLayer.push({
+                101: "true",
+            });
+            console.log("run 102");
+            dom_observer.disconnect();
+        }
+
+    }
+
+});
+var container = document.body;
+var configs = {
+    attributes: false,
+    childList: true,
+    characterData: false,
+};
+dom_observer.observe(container, configs);
