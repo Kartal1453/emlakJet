@@ -1,0 +1,37 @@
+ var css = `
+    .styles_wrapper__3JQCT {
+    display: none !important;
+}
+
+`;
+var style = document.createElement("style");
+style.appendChild(document.createTextNode(css));
+document.head.appendChild(style);
+
+
+function call() {
+if (!!document.querySelector(".styles_main__2rBHQ")) {
+    var projeIlan = document.querySelectorAll(".styles_main__2rBHQ");
+    var regularIlan = document.querySelectorAll("div.styles_listingItem__UCu3W");
+    regularIlan.forEach((element,index) => {
+        if(index == 6){
+            element.insertAdjacentElement("beforebegin",projeIlan[0])
+        }
+        if(index == 12){
+            element.insertAdjacentElement("beforebegin",projeIlan[1])
+        }
+        if(index == 18){
+            element.insertAdjacentElement("beforebegin",projeIlan[2])
+        }
+        if(index == 24){
+            element.insertAdjacentElement("beforebegin",projeIlan[3])
+        }
+    });
+     
+} 
+      
+  }
+      
+window.onload = function() {
+  call();
+};
